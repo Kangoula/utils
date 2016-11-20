@@ -1,2 +1,17 @@
-#/bin/sh
-find . -type f -name '*.mp3' -exec bash -c 'ffmpeg -i "$0" -map a -c:a libvorbis -q:a 7 "${0/%mp3/ogg}"' '{}' \;
+#/bin/bash
+
+function convert {
+    echo $2
+    ffmpeg -i "${2}" -map a -c:a libvorbis -q:a 7 "${2/%$1/ogg}"
+}
+
+function main {
+    TYPE=${1}
+    for file in *.$TYPE
+    do
+        convert $TYPE "$file"
+    done
+
+}
+
+main ${1}
