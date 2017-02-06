@@ -33,6 +33,10 @@ dnf config-manager --add-repo=http://negativo17.org/repos/fedora-steam.repo
 echo "[ add Owncloud client repo ]"
 dnf config-manager --add-repo http://download.opensuse.org/repositories/isv:ownCloud:desktop/Fedora_25/isv:ownCloud:desktop.repo
 
+# node
+echo "[ add nodeJS repo ]"
+curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
+
 # spotify
 echo "[ add spotify repo ]"
 dnf config-manager --add-repo=http://negativo17.org/repos/fedora-spotify.repo
@@ -45,7 +49,6 @@ wget https://atom.io/download/rpm -O atom.rpm
 # softwares
 echo "[ install stuff ]"
 dnf install -y nodejs \
-	npm \
 	wget \
 	docker \
 	docker-compose \
@@ -69,8 +72,11 @@ dnf install -y nodejs \
 	pandoc \
 	autoconf \
 	automake \
-	rxvt-unicode-256color \
-	texlive-scheme-full \
+	mpd \
+	ncmpcpp \
+	scrot \
+	feh \
+	# texlive-scheme-full \
 	arc-theme \
 	~/atom.rpm 
 
@@ -80,7 +86,7 @@ wget https://dl.yarnpkg.com/rpm/yarn.repo -O /etc/yum.repos.d/yarn.repo
 
 dnf install -y yarn
 
-yarn global add react-native-cli eslint eslint-plugin-react eslint-plugin-react-native bower 
+yarn global add react-native-cli eslint eslint-plugin-react eslint-plugin-react-native bower gulp-cli yo generator-jhipster
 
 # watchman
 
