@@ -42,9 +42,9 @@ echo "[ add spotify repo ]"
 dnf config-manager --add-repo=http://negativo17.org/repos/fedora-spotify.repo
 
 # atom 
-echo "[ download Atom ]"
-cd  ~
-wget https://atom.io/download/rpm -O atom.rpm
+echo "[ download Atom and install ]"
+wget https://atom.io/download/rpm -O /tmp/atom.rpm
+rpm -Uvh /tmp/atom.rpm
 
 # softwares
 echo "[ install stuff ]"
@@ -76,9 +76,12 @@ dnf install -y nodejs \
 	ncmpcpp \
 	scrot \
 	feh \
-	# texlive-scheme-full \
-	arc-theme \
-	~/atom.rpm 
+	ImageMagick \
+	i3lock \
+	texlive-scheme-medium \
+	redshift \
+	network-manager-applet \
+	arc-theme
 
 # npm
 echo "[ install nodeJs softwares ]"
@@ -88,13 +91,9 @@ dnf install -y yarn
 
 yarn global add react-native-cli eslint eslint-plugin-react eslint-plugin-react-native bower gulp-cli yo generator-jhipster
 
-# watchman
-
-
 # ohmyzsh
 echo "[ download oh-my-zsh ]"
 wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -
-
 
 # atom packages
 echo "[ install Atom packages ]"
@@ -102,9 +101,6 @@ echo "run"
 echo " apm install nuclide file-icons linter-eslint markdown-preview-plus markdown-writer minimap pigments todo-show "
 echo ""
 echo "to install atom packages"
-
-# mydotfiles
-# git clone https://github.com/Kangoula/mydotfiles.git 
 
 # vim plugins
 # git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
