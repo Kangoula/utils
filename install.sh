@@ -80,6 +80,9 @@ dnf install -y nodejs \
 	i3lock \
 	texlive-scheme-medium \
 	redshift \
+	mpv \
+	dunst \
+	rxvt-unicode-256color \
 	network-manager-applet \
 	arc-theme
 
