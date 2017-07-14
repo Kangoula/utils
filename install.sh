@@ -12,7 +12,7 @@ dnf update -y
 
 # RPM Fusion
 echo "[ enable RPMFusion ]"
-dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-25.noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-25.noarch.rpm
+dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-26.noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-26.noarch.rpm
 
 # chrome
 echo "[ add Google Chrome repo ]"
@@ -28,10 +28,6 @@ EOF
 # steam
 echo "[ add Steam repo ]"
 dnf config-manager --add-repo=http://negativo17.org/repos/fedora-steam.repo
-
-# owncloud 
-echo "[ add Owncloud client repo ]"
-dnf config-manager --add-repo http://download.opensuse.org/repositories/isv:ownCloud:desktop/Fedora_25/isv:ownCloud:desktop.repo
 
 # node
 echo "[ add nodeJS repo ]"
@@ -62,9 +58,7 @@ dnf install -y nodejs \
 	unzip \
 	geary \
 	steam \
-	filezilla \
 	tlp \
-	owncloud-client \
 	zsh \
 	vim \
 	git \
@@ -92,7 +86,7 @@ wget https://dl.yarnpkg.com/rpm/yarn.repo -O /etc/yum.repos.d/yarn.repo
 
 dnf install -y yarn
 
-yarn global add react-native-cli eslint eslint-plugin-react eslint-plugin-react-native bower gulp-cli yo generator-jhipster
+#yarn global add react-native-cli eslint eslint-plugin-react eslint-plugin-react-native bower gulp-cli yo generator-jhipster
 
 # ohmyzsh
 echo "[ download oh-my-zsh ]"
@@ -106,5 +100,5 @@ echo ""
 echo "to install atom packages"
 
 # vim plugins
-# git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 # vim +PluginInstall +qall
